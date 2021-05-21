@@ -1,0 +1,160 @@
+1.0 The Skeld    //Version Title
+
+ROOMS 8 // 8 rooms in this dungeon labeled with 1 exit coded
+//12 = x coordinate 1, y coordinate 2
+
+21 Entrance Room
+3
+You stand in the entrance of a dilapidated, isolated cabin of an interstellar freighter
+There are doors to the west, east, and north
+And a drop pod to escape with to the south
+
+11 Kitchen
+3
+As you enter a wave of nausea passes over you
+You've entered the kitchen, and most of the food smells foul
+There is a door to the east
+
+31 Crewman's Quarters
+2
+You sneak into a cramped cabin, the gentle hum of a computer whining and the skeleton of a crewman laid upon his bed
+There is a door to the west
+
+22 Meeting Room
+3
+You step into the meeting room, a relatively spacious area set aside for conversations and long nights of planning
+The room doesn't seem to have been used in ages
+There is a door to the south, west, east, and north
+
+42 Captain's Study
+4
+You enter into the Captain's study.
+This place seems like a place that you can call home, a small cozy area
+You see something catch your eye, a bookshelf to the north of you looks like a hidden room. . .
+There is a door to the south and a hidden room to the north
+
+52 Guest Cabin
+4
+You enter into the Guest Cabin, and you have never seen anything like this...
+This is one of the largest bedrooms you have ever seen!
+You see something in the middle of the room, it looks like a control panel, perhaps it opens something?
+There is a door to the east to exit the room
+
+55 Library
+3
+You enter the library, you see books scattered everywhere. Almost like someone was trying to find a certain book.
+You see a clump of books on what looks like a control panel.
+There is a door to the west to exit the room
+
+58 Hidden Lab
+3
+You enter the Hidden Room, your greeted by a horrendous smell, almost like something has been dead here for a while.
+The walls are covered by what looks like green mold, but at the same time it looks like slime.
+There is a door to the south to exit the room
+
+
+
+
+
+PATHS 15  //path id   origin  direction destination lock-code
+
+//Entrance Room
+1   21  W   11  0  //to kitchen
+2   21  N   22  0  //to living room
+3   21  E   31  0  //to bedroom
+4   21  S   0  1  //to outside
+
+//Kitchen
+5   11  E   21  0  //to entrance
+
+//Bedroom
+6   31  W   21  0  //to entrance
+
+//Living Room
+7   22  S   21  0  //to entrance
+8   22  E   55  0  //to library
+9   22  W   52  0  //to Master bedroom
+10   22  N   42  0  //to Study Room
+
+//Study Room
+11  42  N   58  2 //to hidden room
+12 42   S   22  0 //to living room
+
+//Library
+13  55  W   22  0 //to living room
+
+//Master Bedroom
+14  52  E   22  0 //to living room
+
+//Hidden Room
+15 58 S 42 0 //To living room
+
+
+//Outside
+
+
+
+
+//  location
+//  id  isaDrop isEquipped  hpValue attackDamageValue isLeg isHelmet isArmor isWeapon  value  weight  keycode title
+//  lines-in-description
+//  description
+ITEMS 5
+
+58
+1   1   0   0   0   0   0   0   0  2.00    .1  1   Choco-Key
+1
+A chocolate shaped like a key, it may fill something more than your sweet tooth...
+
+22
+2   1   1   5   0   0   1   0   0   5.00    1  0   Slime-Helmet
+1
+A helmet that looks like it is covered in slime. . . Looks like you can equip it.
+
+42
+3   0   1   0   7   0   0   0   1   3.00    1  0   Rusty-Sword
+1
+This sword looks beyond rusty to a point where you don't even want to touch it. What is a sword doing on a spaceship? Looks like you can equip it. . .
+
+31
+4   0   0   5   0   0   0   0   0   2.00   .1  0   First-Aid-Kit
+1
+A first aid kit with various medical supplies.
+
+55
+5   0   0   0   3   0   0   0   0   2.00   1  0   Power-Pill
+1
+A suspicious looking pill. May have been some kind of experimental drug.
+
+
+//  location
+//  id  health  attackDamage    itemdropID  personality name
+//  lines-in-description
+// description
+//  lines-in-death
+// description
+ENEMIES 2
+
+22
+1   5   0   2   0   Slime
+1
+Out of the corner of your eye you see a little slime ball, to your surprise. . . it's alive! But it doesn't seem to be aggressive. . .
+1
+The slime looks at you and for a brief moment, you see the slime look at you sadly as it dissolves.
+
+58
+2   20   3   1   1   Blob-Queen
+1
+You see some crawl out of the corner, it's like nothing you have seen before. This creature is guttered with filth and it is angered by your presence. . .
+1
+The Blob-Queen looks at you, a look you won't be forgetting. Almost like you angered it. . .
+
+//location
+//id    isUnlocked  locationItUnlocks   keycode name
+CONTROLPANEL 2
+
+55  //Library
+1   0   42  2   panel-034
+
+52  //MasterBedroom
+2   0   42  2   panel-56

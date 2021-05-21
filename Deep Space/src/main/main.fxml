@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="500.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="600.0" styleClass="stars" stylesheets="@style.css">
+         <center>
+            <VBox id="background" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Deep Space" textFill="#26ff00">
+                     <VBox.margin>
+                        <Insets bottom="100.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="GeoSlab703 Md BT Bold" size="67.0" />
+                     </font></Label>
+                  <Button mnemonicParsing="false" onAction="#startGame" prefHeight="60.0" prefWidth="100.0" text="Start Game">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></Button>
+                  <TextField fx:id="fileInput" maxWidth="80.0" prefWidth="80.0">
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin></TextField>
+                  <Button minHeight="30.0" mnemonicParsing="false" onAction="#helpMenu" prefWidth="70.0" text="Help">
+                     <VBox.margin>
+                        <Insets bottom="150.0" />
+                     </VBox.margin></Button>
+               </children></VBox>
+         </center></BorderPane>
+   </children>
+</GridPane>

@@ -1,0 +1,7 @@
+.stars {
+    -fx-background-image:url("star.jpg");
+}
+
+.background {
+    -fx-background-image:url("gameBackground.jpg");
+}

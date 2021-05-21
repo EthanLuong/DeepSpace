@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-image: &quot; gameBackground.jpg&quot;;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.GameController">
+   <right>
+      <VBox prefHeight="600.0" prefWidth="226.0" style="-fx-border-style: solid;" styleClass="background" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="154.0" prefWidth="189.0" style="-fx-border-style: solid; -fx-background-image: gameBackground.jpg;" styleClass="background">
+               <children>
+                  <Label fx:id="hpLabel" text="HP" textFill="#01dd01">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adLabel" text="AD" textFill="#3fdd00">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="inventory" prefWidth="150.0" />
+                  <HBox prefHeight="53.0" prefWidth="201.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#useItem" text="Use">
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Courier New" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#dropItem" text="Drop">
+                           <font>
+                              <Font name="Courier New" size="14.0" />
+                           </font></Button>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding></VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="445.0" prefWidth="197.0" style="-fx-border-style: solid;" styleClass="background" stylesheets="@style.css">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="89.0" prefWidth="222.0">
+                     <children>
+                        <Button fx:id="northButton" mnemonicParsing="false" onAction="#goNorth" text="^">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin></Button>
+                        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="222.0">
+                           <children>
+                              <Button fx:id="westButton" mnemonicParsing="false" onAction="#goWest" stylesheets="@style.css" text="&lt;">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin></Button>
+                              <Button fx:id="eastButton" mnemonicParsing="false" onAction="#goEast" text="&gt;" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="southButton" mnemonicParsing="false" onAction="#goSouth" text="v" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="pickUpButton" mnemonicParsing="false" onAction="#pickUp" text="Pick Up" visible="false">
+                     <font>
+                        <Font name="Courier New" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="activateButton" mnemonicParsing="false" onAction="#activatePanel" text="Activate" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="100.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Courier New" size="14.0" />
+                     </font>
+                  </Button>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="runButton" mnemonicParsing="false" onAction="#run" text="Run" visible="false">
+                           <font>
+                              <Font name="Courier New" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="40.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="fightButton" mnemonicParsing="false" onAction="#fight" text="Fight" visible="false">
+                           <font>
+                              <Font name="Courier New" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="100.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#lookAround" text="Inspect">
+                     <font>
+                        <Font name="Courier New" size="14.0" />
+                     </font></Button>
+               </children></VBox>
+         </children></VBox>
+   </right>
+   <center>
+      <VBox prefHeight="600.0" prefWidth="679.0" style="-fx-border-style: solid;" styleClass="background" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="648.0" style="-fx-border-style: none none solid;">
+               <children>
+                  <Label fx:id="roomLabel" textFill="#5cff00">
+                     <font>
+                        <Font name="OCR-A BT" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding></HBox>
+
+            <HBox fx:id="roomPicture" prefHeight="383.0" prefWidth="767.0" style="-fx-border-style: solid none solid none;">
+               <children>
+                  <ImageView fx:id="enemyPic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="250.0" top="200.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="itemPic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets top="200.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children></HBox>
+
+            <HBox prefHeight="271.0" prefWidth="772.0" style="-fx-background-color: gray;">
+               <children>
+                  <TextArea fx:id="roomDescription" opacity="0.44" prefHeight="257.0" prefWidth="772.0" style="-fx-background-color: gray;" styleClass="background" stylesheets="@style.css" wrapText="true">
+                     <font>
+                        <Font name="Courier New" size="18.0" />
+                     </font></TextArea>
+               </children></HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

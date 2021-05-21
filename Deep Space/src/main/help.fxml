@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" styleClass="stars" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#mainMenu" text="Back" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TextArea opacity="0.49" prefHeight="355.0" prefWidth="300.0" text="Deep Space is an adventure-dungeon-puzzle game that allows players to explore a spaceship while simultaneously battling alien-like creatures who have boarded the ship and figuring out ways to get to the next room in the spaceship. The player has spent decades in cryogenic sleep only for them to wake up now, surrounded by unfamiliarities. The players goal is simple and that is to get off the spaceship. The player will overcome obstacles, gather resources, and battle among the spaceship in hopes of finding a escape pod." wrapText="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="50.0" />
+         </BorderPane.margin>
+      </TextArea>
+   </center>
+   <padding>
+      <Insets bottom="100.0" left="100.0" right="100.0" top="50.0" />
+   </padding>
+</BorderPane>
